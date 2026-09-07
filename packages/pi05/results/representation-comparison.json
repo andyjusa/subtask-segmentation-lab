@@ -1,0 +1,62 @@
+{
+  "experiment": "PI0.5 sub-task representation comparison",
+  "hardware": "Apple M4 Pro, MPS",
+  "policy": "PI0.5 cup pick-and-place checkpoint",
+  "settings": {
+    "frames": 410,
+    "replan": 50,
+    "flow_steps": 10,
+    "confidence_threshold": 0.5,
+    "stable_frames": 5,
+    "train_seed": 0,
+    "failed_test_seed": 1
+  },
+  "successful_rollout": {
+    "physical_boundaries": [170, 354],
+    "representations": {
+      "action_output": {
+        "dimension": 6,
+        "validation_accuracy": 0.9878048780487805,
+        "stable_transitions": [174, 354]
+      },
+      "action_expert_hidden": {
+        "dimension": 1024,
+        "validation_accuracy": 1.0,
+        "stable_transitions": [174, 358]
+      },
+      "vlm_hidden": {
+        "dimension": 2048,
+        "unique_vectors": 9,
+        "validation_accuracy": 0.9390243902439024,
+        "stable_transitions": [154, 354]
+      },
+      "posthoc_fast_token_histogram": {
+        "dimension": 2049,
+        "unique_vectors": 9,
+        "validation_accuracy": 0.9390243902439024,
+        "stable_transitions": [154, 354]
+      }
+    }
+  },
+  "failed_rollout": {
+    "physical_boundaries": [],
+    "false_placing_frame": {
+      "action_output": 197,
+      "action_expert_hidden": 193,
+      "vlm_hidden": 254,
+      "posthoc_fast_token_histogram": 354
+    },
+    "false_complete": {
+      "action_output": false,
+      "action_expert_hidden": false,
+      "vlm_hidden": false,
+      "posthoc_fast_token_histogram": false
+    }
+  },
+  "interpretation": {
+    "pi05_has_discrete_action_tokens": false,
+    "action_expert_hidden": "Closest same-model equivalent to an action-token hidden representation.",
+    "posthoc_fast_tokens": "Discrete FAST tokens derived from normalized PI0.5 actions; not emitted internally by PI0.5.",
+    "conclusion": "All representations detect policy intent but require a physical or visual verifier for task success."
+  }
+}

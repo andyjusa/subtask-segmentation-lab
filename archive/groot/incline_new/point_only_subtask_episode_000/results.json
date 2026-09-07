@@ -1,0 +1,64 @@
+{
+  "method": "point tracks only: 4x3 flow grid + causal-free change-point novelty",
+  "input": "/tmp/incline_episode_000.mp4",
+  "frames": 1740,
+  "fps": 30.0,
+  "frame_size": [
+    640,
+    480
+  ],
+  "segments": 5,
+  "predicted_boundaries_s": [
+    8.833333333333334,
+    15.166666666666666,
+    29.6,
+    51.766666666666666
+  ],
+  "equal_duration_baseline_s": [
+    11.6,
+    23.2,
+    34.8,
+    46.4
+  ],
+  "point_method_evaluation": {
+    "reference_s": [
+      15.770000457763672,
+      25.729999542236328,
+      36.22999954223633,
+      48.029998779296875
+    ],
+    "absolute_errors_s": [
+      6.936667124430338,
+      10.563332875569662,
+      6.629999542236327,
+      3.7366678873697907
+    ],
+    "mean_absolute_error_s": 6.966666857401529,
+    "median_absolute_error_s": 6.783333333333332,
+    "within_1s": 0,
+    "within_2s": 0
+  },
+  "equal_duration_evaluation": {
+    "reference_s": [
+      15.770000457763672,
+      25.729999542236328,
+      36.22999954223633,
+      48.029998779296875
+    ],
+    "absolute_errors_s": [
+      4.170000457763672,
+      2.529999542236329,
+      1.429999542236331,
+      1.6299987792968764
+    ],
+    "mean_absolute_error_s": 2.439999580383302,
+    "median_absolute_error_s": 2.0799991607666026,
+    "within_1s": 0,
+    "within_2s": 2
+  },
+  "limitations": [
+    "Single-episode pilot; no cross-episode generalization claim.",
+    "The number of stages is supplied in advance.",
+    "Change-point scoring is offline because it compares one second before and after."
+  ]
+}

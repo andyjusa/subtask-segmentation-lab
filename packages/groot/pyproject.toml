@@ -1,0 +1,41 @@
+[project]
+name = "groot-subtask-phase-probe"
+version = "0.1.0"
+description = "Frozen-representation probes for GR00T N1.7 subtask stages and boundaries"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=1.26,<2",
+  "scikit-learn>=1.7,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.12"]
+train = ["torch>=2.7,<3"]
+
+[project.scripts]
+groot-probe-collect = "groot_subtask_phase_probe.collect:main"
+groot-probe-evaluate = "groot_subtask_phase_probe.evaluate:main"
+groot-probe-export-online = "groot_subtask_phase_probe.online_pause:export_main"
+groot-probe-transformer = "groot_subtask_phase_probe.streaming_transformer:main"
+groot-probe-modality = "groot_subtask_phase_probe.modality_probe:main"
+groot-probe-color-stop = "groot_subtask_phase_probe.color_stop:main"
+groot-probe-color-stop-evaluate = "groot_subtask_phase_probe.color_stop_probe:main"
+groot-probe-color-stop-online = "groot_subtask_phase_probe.color_stop_online:main"
+groot-probe-color-transformer = "groot_subtask_phase_probe.color_stop_transformer:main"
+groot-probe-two-boundary-collect = "groot_subtask_phase_probe.fixed_color_two_boundary:main"
+groot-probe-two-boundary-c2 = "groot_subtask_phase_probe.two_boundary_c2:main"
+groot-probe-sciedu-extract = "groot_subtask_phase_probe.sciedu_cosmos:extract_main"
+groot-probe-sciedu-evaluate = "groot_subtask_phase_probe.sciedu_cosmos:evaluate_main"
+groot-probe-incline-hidden = "groot_subtask_phase_probe.incline_groot_hidden:main"
+
+[build-system]
+requires = ["uv_build>=0.11.14,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

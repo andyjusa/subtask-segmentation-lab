@@ -1,0 +1,26 @@
+{
+  "experiment": "pi05 action-only sub-task phase probe",
+  "date": "2026-08-21",
+  "task": "Pick up the cup from the red marker and place it on the green marker.",
+  "input": {
+    "source": "PI0.5 commanded action",
+    "action_dim": 6,
+    "frames": 410
+  },
+  "phases": ["picking", "placing", "complete"],
+  "training": {
+    "ground_truth_transition_frames": [170, 354],
+    "raw_predicted_transition_frames": [170, 350],
+    "validation_accuracy": 0.9878048780487805,
+    "validation_note": "stride split inside one rollout; not a generalization result"
+  },
+  "online_run": {
+    "confidence_threshold": 0.5,
+    "stable_frames": 5,
+    "emitted_transition_frames": [175, 355],
+    "placed": true,
+    "api_events_delivered": 3,
+    "api_error": null
+  },
+  "known_failure": "A failed rollout emitted placing even though the object was not grasped."
+}

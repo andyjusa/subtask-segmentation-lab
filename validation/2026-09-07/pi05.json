@@ -1,0 +1,10 @@
+{
+  "scope": "same-episode stride validation; accuracy is NOT F1",
+  "frames": 410,
+  "action_dim": 6,
+  "validation_accuracy": 0.9878048780487805,
+  "transitions": [
+    170,
+    350
+  ]
+}

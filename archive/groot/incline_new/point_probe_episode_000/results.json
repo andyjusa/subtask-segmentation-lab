@@ -1,0 +1,136 @@
+{
+  "input": "reports/incline_new/point_only_subtask_episode_000/point_flow_features.npz",
+  "feature_contract": "68D point-flow only; no RGB embedding, robot state, SAM3, or time index",
+  "evaluation": "5-fold within-stage contiguous-block out-of-fold predictions",
+  "reference_boundaries_s": [
+    15.770000457763672,
+    25.729999542236328,
+    36.22999954223633,
+    48.029998779296875
+  ],
+  "models": {
+    "linear": {
+      "frame_argmax_macro_f1": 0.28872952171470034,
+      "frame_argmax_balanced_accuracy": 0.2921932097634313,
+      "ordered_macro_f1": 0.6692890202592189,
+      "ordered_balanced_accuracy": 0.7113850115084027,
+      "ordered_confusion_matrix": [
+        [
+          378,
+          90,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          299,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          315,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          23,
+          331,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          53,
+          246
+        ]
+      ],
+      "predicted_boundaries_s": [
+        12.6,
+        15.6,
+        37.0,
+        49.8
+      ],
+      "boundary_absolute_errors_s": [
+        3.1666666666666665,
+        10.133333333333333,
+        0.7666666666666667,
+        1.7666666666666666
+      ],
+      "boundary_mean_absolute_error_s": 3.958333333333333,
+      "boundary_median_absolute_error_s": 2.466666666666667,
+      "boundary_within_1s": 1,
+      "boundary_within_2s": 2
+    },
+    "mlp": {
+      "frame_argmax_macro_f1": 0.30163010585247846,
+      "frame_argmax_balanced_accuracy": 0.3038426400062019,
+      "ordered_macro_f1": 0.8189657135226194,
+      "ordered_balanced_accuracy": 0.8143165047512874,
+      "ordered_confusion_matrix": [
+        [
+          473,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          55,
+          156,
+          88,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          248,
+          67,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          354,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          71,
+          228
+        ]
+      ],
+      "predicted_boundaries_s": [
+        17.6,
+        22.8,
+        34.0,
+        50.4
+      ],
+      "boundary_absolute_errors_s": [
+        1.8333333333333333,
+        2.933333333333333,
+        2.2333333333333334,
+        2.3666666666666667
+      ],
+      "boundary_mean_absolute_error_s": 2.341666666666667,
+      "boundary_median_absolute_error_s": 2.3,
+      "boundary_within_1s": 0,
+      "boundary_within_2s": 1
+    }
+  },
+  "limitations": [
+    "One episode only; this is not an episode-level generalization result.",
+    "Labels are used to train the probes; only their inputs are point-only.",
+    "Ordered decoding knows that five stages occur in a fixed order."
+  ]
+}

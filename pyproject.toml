@@ -1,0 +1,34 @@
+[project]
+name = "subtask-segmentation-lab"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "groot-subtask-phase-probe",
+  "vla-subtask-phase-probe",
+  "scipy>=1.14,<2",
+]
+
+[project.optional-dependencies]
+train = ["torch>=2.7,<3"]
+
+[dependency-groups]
+dev = [
+    "gymnasium>=1,<2",
+    "pyarrow>=18,<24",
+    "pytest>=8,<9",
+    "ruff>=0.12",
+]
+
+[tool.uv.workspace]
+members = ["packages/groot", "packages/pi05"]
+
+[tool.uv.sources]
+groot-subtask-phase-probe = { workspace = true }
+vla-subtask-phase-probe = { workspace = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

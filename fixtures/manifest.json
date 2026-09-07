@@ -1,0 +1,335 @@
+{
+  "notes": "Derived observations/actions, NOT model weights. Source HF revision was not recorded in the historical run; checksums pin these fixtures.",
+  "files": [
+    {
+      "path": "fixtures/incline50/boundaries.csv",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 4337,
+      "sha256": "c03e98e6b41907f7a327c6f85904f1ecf8703889c86e6671810e377908f617cc"
+    },
+    {
+      "path": "fixtures/incline50/split.json",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 464,
+      "sha256": "5797d5b1f8ca056f81c83c8d9c0902c44fe26268991fa39561b03b903e40f1bc"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_003/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1405914,
+      "sha256": "6d70ab75a847796dbecf73759a581da09a5889b1242d30cb48a0ca0fc19b03fc"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_004/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1348635,
+      "sha256": "d895deaaccddd2c502e616b193b28118981d79d1687f1a6b245806da1c8247fd"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_005/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1501103,
+      "sha256": "631147d8dd4c644c7dc197fa8262d23d92349d326247762e35cb8347023ed4b4"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_006/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1304273,
+      "sha256": "ff4f80e84ded64ecf609f91be78803d2f87fc777928b44526eaab14085f037e6"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_007/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1386618,
+      "sha256": "e594dc18aa8dcfe3be7cd44bfef7c9ec4a4995a196360cc0bb6b752001cc6351"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_009/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1266059,
+      "sha256": "e455dc37e7804041dc8096062254235d482d77da6a64f6e03211cdca9f3338cb"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_010/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1215112,
+      "sha256": "d264464eab98d5370f131b0d47d5a1111f8e9240030f10c996b215889d82065a"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_011/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1158066,
+      "sha256": "f5daaf3abbfc2f7ec0e1d53ee6639b103f609a0c92938f19f78a6701a7a43745"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_015/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1209080,
+      "sha256": "c7394153c179dfcca37d6d8163a2053336830650fe3c5f8a2eabbeca6f6187bd"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_016/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1164075,
+      "sha256": "02e8f99b51793f530c1fbb3bed7a0d80462c497049783fc8843a102ec4c7b094"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_017/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1081872,
+      "sha256": "8461a7f7803edacf5ff0bd7aa3ba5a4859a677684dc2028d2a92b2311c88edb8"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_018/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1189362,
+      "sha256": "48b35822a6c31d96c1ced0c39e8cd53d71735e4df60e3165ce226ffe21b5b38a"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_019/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1081963,
+      "sha256": "27d503341cc94180263b93e6ac9c578a31c5239f60fc9ea7ecdef3676cd486f1"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_020/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1152111,
+      "sha256": "e6c698871e93fdd926fd1f1619ebe2689fdc31369bb935cd07461cd3c0eaa960"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_021/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1164702,
+      "sha256": "ab49952f4f72a4bcf227303c7f512fb19a0be58baab41b139c1d3d07fe305f07"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_022/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1266322,
+      "sha256": "f427e93c4de26d7661139a1d095d5f8c3136c458106d8e8370774bfb57f07b26"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_023/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1342559,
+      "sha256": "3df822138848756c260b9e7b556c09206cd3c6a51a91685ddd129077c3e815bb"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_024/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1107741,
+      "sha256": "944ed30da6706149dbeee856ae81d04877e79dea529f519a5f481d477e392b12"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_025/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1170503,
+      "sha256": "26458a4063f3f87942cd5d1369816f9c5d7929456893f73479a5d96a4f2b97bb"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_026/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1132254,
+      "sha256": "8e964fed1000fabb6605752f883c9376f3bc8fe14fe5960e2b20f51741fcb46d"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_027/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1076101,
+      "sha256": "400c3cb0ac7f125e5649dd27d4095664b18b0d2289277449b063fb8cbaaf951c"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_028/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1215394,
+      "sha256": "aa1142dc08628bd2e4592a1e5a001e33cdc47657d73a110d266b80021b1b7ba7"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_029/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1183981,
+      "sha256": "82633cbff171ec8f87bc1beedee8e4185c61035908ac611b45fbafcfba78c857"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_030/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1088548,
+      "sha256": "9024e99191e51de294280e0cf054a2b7402f2067dcab00bbba9e5d941dad8a84"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_031/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1082428,
+      "sha256": "ea0d68fc65bd5a4df3da71bcac56fb0fd844129814ea7aaa71b84e74469228b6"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_032/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1031613,
+      "sha256": "20b53233f7228c997eb2303dee20f1fe6df2c764c25f412714b3408040fca184"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_034/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1386854,
+      "sha256": "d88ee67503067fd7f3cb81c0780f72b9c11b68db90d09c72dfb369a4bf9fcca8"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_035/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1094948,
+      "sha256": "f807dd5d4a709f8f7287c417b0a3571c27a3ca3e79694c619949ceb4ace17123"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_037/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1183823,
+      "sha256": "1def607fc61f02a829cff4457ed6c3c2d59f4f7f0f98410f3133ca1023b151a1"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_038/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1145919,
+      "sha256": "88506a497f676e223d7d5087ac7f686da342903e8f90a4aa32f72a0ba9328cad"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_039/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1038270,
+      "sha256": "12cec7514878da9630e14157ba958779bb4107b89b7b237e43cba0c11c6b52d8"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_040/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1095249,
+      "sha256": "de0145d1f9223497655d471bfd6d5d1b33c9d06359280c39e0054f00102a0df8"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_041/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1037782,
+      "sha256": "dc070e010279b2f53a59754846da15f6c813a2e0f2097a5eaa948640f7092aa6"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_042/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1056740,
+      "sha256": "a8351307691e66c771da6dcb0c6bb248749c3e2a59307cc6717a1bf816aee895"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_043/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1114086,
+      "sha256": "1fa720a5d07facd5933f64cebd2edd1b922bd446f668268db1082ffb48387925"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_044/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1209643,
+      "sha256": "66b446adffb32146d0f4fbeb99bbe0f7d1bf0ac984cf1f2f8a97969fa132fe90"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_045/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1114238,
+      "sha256": "fa8a43862a07152799e8f5d38ab35784710a5135da236708c2bdba01c6755c6f"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_046/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1088749,
+      "sha256": "018618970db7faaf807633686282aaef4d02f0c5f16e0804ab12699611c8cead"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_047/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1317078,
+      "sha256": "4823bd4eb24f1d6136a03feb22df4a3c3f082d62260fd0ceff0907872a7b8779"
+    },
+    {
+      "path": "fixtures/incline50/train/episode_049/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1037763,
+      "sha256": "5b05b4d0ea37a15f469cb097ffa98684cd5701fb52fefba39452c01825eb424f"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_000/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1843956,
+      "sha256": "b3691f66e2e773ca156d8752c289f2254945f3916c2c649a5fc20eec6fde9b60"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_001/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1706205,
+      "sha256": "f0cefa8be27282325df4d4314c76e698f0be681130969de7edc6886f3b1f1e4f"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_002/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1685628,
+      "sha256": "798388e6b0c0120ee0469eb20d266d2ae4ad909a2c900257cb7220935aa9a1ae"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_008/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1234458,
+      "sha256": "63d48ad63de06f30473f478315ff35316a71d4d36d94fa20fd31cea56bd3ea6c"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_012/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1126222,
+      "sha256": "a5154dd8c603e3dd0fd20af70c9a9153f3ed9e40dfdc4316595c07374756635a"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_013/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1113638,
+      "sha256": "f5b5022ed49531433010a40a0c5809a7ee5e1584b1c4c2bc2bfff28c4ff3c149"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_014/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1114092,
+      "sha256": "301589c491f6276e6ad58ee1e6abd71f180dc78f097838dd0a4532a3e9557905"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_033/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1196608,
+      "sha256": "6675c0297e08746b64aacf7145ebc39e9cd4dac0ab90809bc2fc5a2682b0a9c6"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_036/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1056738,
+      "sha256": "8c5812824ea1525f9c25c2b7ee800abb1bcd75ff97a53d8379b0d2cd7409bfed"
+    },
+    {
+      "path": "fixtures/incline50/validation/episode_048/groot_backbone_hidden.npz",
+      "source": "leapshared/Incline_new_20260902_203009",
+      "bytes": 1018166,
+      "sha256": "e512ffec8750863b5b9f864ea0ac391def73903470e7f26de298cff476c91657"
+    },
+    {
+      "path": "fixtures/rollout/boundaries.json",
+      "source": "leapshared/rollout_Incline_20260903_20260903_190043",
+      "bytes": 1799,
+      "sha256": "afa7dbce1ea7f4c7c58340626fbe94cd78092fda0bc53d43245a1271ab765c2e"
+    },
+    {
+      "path": "fixtures/rollout/groot_backbone_hidden.npz",
+      "source": "leapshared/rollout_Incline_20260903_20260903_190043",
+      "bytes": 3496754,
+      "sha256": "29c6045f5df9e750a52dbfb122d11a9942fb91f082f902340a4100364d47c80f"
+    },
+    {
+      "path": "fixtures/pi05/actions.npy",
+      "source": "local pi05-output-boundary-s0.actions.npy (SO101 simulation)",
+      "bytes": 19808,
+      "sha256": "0d5434b7fb1dcff83cfb4a70d1d0324b1c9ba002a20855bf5d6bd9143fc0fcb7"
+    }
+  ]
+}

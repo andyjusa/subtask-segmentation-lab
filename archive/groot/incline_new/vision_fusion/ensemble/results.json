@@ -1,0 +1,67 @@
+{
+  "members": [
+    "reports/incline_new/vision_fusion/seed_17/predictions/residual",
+    "reports/incline_new/vision_fusion/seed_29/predictions/residual",
+    "reports/incline_new/vision_fusion/seed_41/predictions/residual",
+    "reports/incline_new/vision_fusion/seed_53/predictions/residual",
+    "reports/incline_new/vision_fusion/seed_67/predictions/residual"
+  ],
+  "ordered_macro_f1": 0.9064454427801172,
+  "ordered_balanced_accuracy": 0.9112007896410462,
+  "boundary_mean_absolute_error_s": 0.9616666666666667,
+  "boundary_median_absolute_error_s": 0.13333333333333333,
+  "boundary_within_1s_rate": 0.9,
+  "boundary_within_2s_rate": 0.9,
+  "episodes": [
+    {
+      "episode": 0,
+      "ordered_macro_f1": 0.996075036075036,
+      "boundary_mean_error_s": 0.075
+    },
+    {
+      "episode": 1,
+      "ordered_macro_f1": 0.980232566577801,
+      "boundary_mean_error_s": 0.25
+    },
+    {
+      "episode": 2,
+      "ordered_macro_f1": 0.32005000185192045,
+      "boundary_mean_error_s": 8.4
+    },
+    {
+      "episode": 8,
+      "ordered_macro_f1": 0.9841406462979464,
+      "boundary_mean_error_s": 0.12499999999999999
+    },
+    {
+      "episode": 12,
+      "ordered_macro_f1": 0.9821307575499253,
+      "boundary_mean_error_s": 0.20833333333333334
+    },
+    {
+      "episode": 13,
+      "ordered_macro_f1": 0.968800968445775,
+      "boundary_mean_error_s": 0.22499999999999998
+    },
+    {
+      "episode": 14,
+      "ordered_macro_f1": 0.9940245261984393,
+      "boundary_mean_error_s": 0.08333333333333334
+    },
+    {
+      "episode": 33,
+      "ordered_macro_f1": 0.9947485080988917,
+      "boundary_mean_error_s": 0.05
+    },
+    {
+      "episode": 36,
+      "ordered_macro_f1": 0.9933387053451517,
+      "boundary_mean_error_s": 0.10833333333333334
+    },
+    {
+      "episode": 48,
+      "ordered_macro_f1": 0.9940856707979997,
+      "boundary_mean_error_s": 0.09166666666666667
+    }
+  ]
+}

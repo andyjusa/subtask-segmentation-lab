@@ -1,0 +1,586 @@
+{
+  "scope": "legacy single-episode stage-aware OOF; NONCAUSAL ordered decoder",
+  "samples": 549,
+  "variants": {
+    "vision_mean_native": {
+      "feature_dim": 2048,
+      "probe_dim": 2048,
+      "blocked_oof_raw_macro_f1": 0.719548641883365,
+      "blocked_oof_raw_balanced_accuracy": 0.7215374420551457,
+      "blocked_oof_ordered_macro_f1": 0.8664743679969507,
+      "blocked_oof_ordered_balanced_accuracy": 0.887065237680438,
+      "predicted_boundary_frames": [
+        1356,
+        2034,
+        2898,
+        3054
+      ],
+      "predicted_boundary_times_s": [
+        45.2,
+        67.8,
+        96.6,
+        101.8
+      ],
+      "reference_boundary_frames": [
+        1533,
+        1960,
+        2841,
+        3086
+      ],
+      "boundary_errors_s": [
+        5.9,
+        2.466666666666667,
+        1.9,
+        1.0666666666666667
+      ],
+      "boundary_mean_absolute_error_s": 2.8333333333333335,
+      "boundary_within_1s_rate": 0.0,
+      "raw_confusion_matrix": [
+        [
+          218,
+          29,
+          6,
+          0,
+          3
+        ],
+        [
+          29,
+          27,
+          15,
+          0,
+          0
+        ],
+        [
+          3,
+          19,
+          122,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          31
+        ]
+      ],
+      "ordered_confusion_matrix": [
+        [
+          226,
+          30,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          71,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          12,
+          135,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          34
+        ]
+      ],
+      "ordered_per_class": [
+        {
+          "stage": 0,
+          "precision": 1.0,
+          "recall": 0.8828125,
+          "f1": 0.9377593360995851,
+          "support": 256
+        },
+        {
+          "stage": 1,
+          "precision": 0.6283185840707964,
+          "recall": 1.0,
+          "f1": 0.7717391304347826,
+          "support": 71
+        },
+        {
+          "stage": 2,
+          "precision": 0.9375,
+          "recall": 0.9183673469387755,
+          "f1": 0.9278350515463918,
+          "support": 147
+        },
+        {
+          "stage": 3,
+          "precision": 1.0,
+          "recall": 0.6341463414634146,
+          "f1": 0.7761194029850746,
+          "support": 41
+        },
+        {
+          "stage": 4,
+          "precision": 0.85,
+          "recall": 1.0,
+          "f1": 0.918918918918919,
+          "support": 34
+        }
+      ]
+    },
+    "vision_mean_256": {
+      "feature_dim": 2048,
+      "probe_dim": 256,
+      "blocked_oof_raw_macro_f1": 0.7294655113819809,
+      "blocked_oof_raw_balanced_accuracy": 0.7282139991216342,
+      "blocked_oof_ordered_macro_f1": 0.8680521582943305,
+      "blocked_oof_ordered_balanced_accuracy": 0.888425781898125,
+      "predicted_boundary_frames": [
+        1356,
+        2028,
+        2898,
+        3054
+      ],
+      "predicted_boundary_times_s": [
+        45.2,
+        67.6,
+        96.6,
+        101.8
+      ],
+      "reference_boundary_frames": [
+        1533,
+        1960,
+        2841,
+        3086
+      ],
+      "boundary_errors_s": [
+        5.9,
+        2.2666666666666666,
+        1.9,
+        1.0666666666666667
+      ],
+      "boundary_mean_absolute_error_s": 2.7833333333333337,
+      "boundary_within_1s_rate": 0.0,
+      "raw_confusion_matrix": [
+        [
+          225,
+          28,
+          2,
+          0,
+          1
+        ],
+        [
+          28,
+          30,
+          13,
+          0,
+          0
+        ],
+        [
+          5,
+          16,
+          121,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          30
+        ]
+      ],
+      "ordered_confusion_matrix": [
+        [
+          226,
+          30,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          71,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          136,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          34
+        ]
+      ],
+      "ordered_per_class": [
+        {
+          "stage": 0,
+          "precision": 1.0,
+          "recall": 0.8828125,
+          "f1": 0.9377593360995851,
+          "support": 256
+        },
+        {
+          "stage": 1,
+          "precision": 0.6339285714285714,
+          "recall": 1.0,
+          "f1": 0.7759562841530054,
+          "support": 71
+        },
+        {
+          "stage": 2,
+          "precision": 0.9379310344827586,
+          "recall": 0.9251700680272109,
+          "f1": 0.9315068493150684,
+          "support": 147
+        },
+        {
+          "stage": 3,
+          "precision": 1.0,
+          "recall": 0.6341463414634146,
+          "f1": 0.7761194029850746,
+          "support": 41
+        },
+        {
+          "stage": 4,
+          "precision": 0.85,
+          "recall": 1.0,
+          "f1": 0.918918918918919,
+          "support": 34
+        }
+      ]
+    },
+    "hidden_mean_native": {
+      "feature_dim": 2048,
+      "probe_dim": 2048,
+      "blocked_oof_raw_macro_f1": 0.7280077882251146,
+      "blocked_oof_raw_balanced_accuracy": 0.7312555018142606,
+      "blocked_oof_ordered_macro_f1": 0.8680521582943305,
+      "blocked_oof_ordered_balanced_accuracy": 0.888425781898125,
+      "predicted_boundary_frames": [
+        1356,
+        2028,
+        2898,
+        3054
+      ],
+      "predicted_boundary_times_s": [
+        45.2,
+        67.6,
+        96.6,
+        101.8
+      ],
+      "reference_boundary_frames": [
+        1533,
+        1960,
+        2841,
+        3086
+      ],
+      "boundary_errors_s": [
+        5.9,
+        2.2666666666666666,
+        1.9,
+        1.0666666666666667
+      ],
+      "boundary_mean_absolute_error_s": 2.7833333333333337,
+      "boundary_within_1s_rate": 0.0,
+      "raw_confusion_matrix": [
+        [
+          222,
+          29,
+          2,
+          0,
+          3
+        ],
+        [
+          24,
+          34,
+          13,
+          0,
+          0
+        ],
+        [
+          6,
+          15,
+          121,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          29
+        ]
+      ],
+      "ordered_confusion_matrix": [
+        [
+          226,
+          30,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          71,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          136,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          34
+        ]
+      ],
+      "ordered_per_class": [
+        {
+          "stage": 0,
+          "precision": 1.0,
+          "recall": 0.8828125,
+          "f1": 0.9377593360995851,
+          "support": 256
+        },
+        {
+          "stage": 1,
+          "precision": 0.6339285714285714,
+          "recall": 1.0,
+          "f1": 0.7759562841530054,
+          "support": 71
+        },
+        {
+          "stage": 2,
+          "precision": 0.9379310344827586,
+          "recall": 0.9251700680272109,
+          "f1": 0.9315068493150684,
+          "support": 147
+        },
+        {
+          "stage": 3,
+          "precision": 1.0,
+          "recall": 0.6341463414634146,
+          "f1": 0.7761194029850746,
+          "support": 41
+        },
+        {
+          "stage": 4,
+          "precision": 0.85,
+          "recall": 1.0,
+          "f1": 0.918918918918919,
+          "support": 34
+        }
+      ]
+    },
+    "hidden_mean_256": {
+      "feature_dim": 2048,
+      "probe_dim": 256,
+      "blocked_oof_raw_macro_f1": 0.7279253731973884,
+      "blocked_oof_raw_balanced_accuracy": 0.7259297975889085,
+      "blocked_oof_ordered_macro_f1": 0.8680521582943305,
+      "blocked_oof_ordered_balanced_accuracy": 0.888425781898125,
+      "predicted_boundary_frames": [
+        1356,
+        2028,
+        2898,
+        3054
+      ],
+      "predicted_boundary_times_s": [
+        45.2,
+        67.6,
+        96.6,
+        101.8
+      ],
+      "reference_boundary_frames": [
+        1533,
+        1960,
+        2841,
+        3086
+      ],
+      "boundary_errors_s": [
+        5.9,
+        2.2666666666666666,
+        1.9,
+        1.0666666666666667
+      ],
+      "boundary_mean_absolute_error_s": 2.7833333333333337,
+      "boundary_within_1s_rate": 0.0,
+      "raw_confusion_matrix": [
+        [
+          226,
+          27,
+          2,
+          0,
+          1
+        ],
+        [
+          27,
+          31,
+          13,
+          0,
+          0
+        ],
+        [
+          5,
+          16,
+          121,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          29
+        ]
+      ],
+      "ordered_confusion_matrix": [
+        [
+          226,
+          30,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          71,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          136,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          26,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          34
+        ]
+      ],
+      "ordered_per_class": [
+        {
+          "stage": 0,
+          "precision": 1.0,
+          "recall": 0.8828125,
+          "f1": 0.9377593360995851,
+          "support": 256
+        },
+        {
+          "stage": 1,
+          "precision": 0.6339285714285714,
+          "recall": 1.0,
+          "f1": 0.7759562841530054,
+          "support": 71
+        },
+        {
+          "stage": 2,
+          "precision": 0.9379310344827586,
+          "recall": 0.9251700680272109,
+          "f1": 0.9315068493150684,
+          "support": 147
+        },
+        {
+          "stage": 3,
+          "precision": 1.0,
+          "recall": 0.6341463414634146,
+          "f1": 0.7761194029850746,
+          "support": 41
+        },
+        {
+          "stage": 4,
+          "precision": 0.85,
+          "recall": 1.0,
+          "f1": 0.918918918918919,
+          "support": 34
+        }
+      ]
+    }
+  }
+}

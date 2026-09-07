@@ -1,0 +1,31 @@
+{
+  "dataset": "leapshared/rollout_Incline_20260903_20260903_190043",
+  "episode_index": 0,
+  "fps": 30.0,
+  "frame_count": 3291,
+  "duration_seconds": 109.7,
+  "task": "Place the four metal weights on the blue cart on the ramp.",
+  "stage_definition": "The stage equals the number of metal weights visibly resting stably on the cart.",
+  "successful_boundaries": [
+    {"stage": 1, "frame": 1533, "time_seconds": 51.1, "evidence": "first weight released into cart and remains"},
+    {"stage": 2, "frame": 1960, "time_seconds": 65.333333, "evidence": "second weight released into cart and remains"},
+    {"stage": 3, "frame": 2841, "time_seconds": 94.7, "evidence": "third weight released into cart and remains"},
+    {"stage": 4, "frame": 3086, "time_seconds": 102.866667, "evidence": "fourth weight released into cart; task terminal"}
+  ],
+  "failed_attempts": [
+    {"time_seconds": 22.066667, "reason": "release completed but cart remains empty"},
+    {"time_seconds": 40.8, "reason": "release completed but cart remains empty"},
+    {"time_seconds": 81.633333, "reason": "grasp/release retry; cart count remains two"}
+  ],
+  "human_repositioning": [
+    {"time_seconds": 23.0, "note": "operator hand repositions weights after a failed attempt"},
+    {"time_seconds": 67.0, "note": "operator hand repositions remaining weights between attempts"},
+    {"time_seconds": 83.0, "note": "operator hand repositions the remaining weight after a failed attempt"}
+  ],
+  "review": {
+    "camera": "observation.images.follower_d455f",
+    "boundary_rule": "first right-gripper opening frame after a visually verified successful placement",
+    "assisted_rollout": true,
+    "note": "Assistance repositions source weights only; successful cart placements are performed by the policy-controlled arm."
+  }
+}

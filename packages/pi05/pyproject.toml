@@ -1,0 +1,24 @@
+[project]
+name = "vla-subtask-phase-probe"
+version = "0.1.0"
+description = "Detect ordered robot sub-task phases from VLA action outputs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+train = ["torch>=2.4"]
+dev = ["pytest>=8.0"]
+fast = [
+  "safetensors>=0.4",
+  "scipy>=1.11",
+  "tokenizers>=0.20",
+  "transformers>=4.48",
+]
+
+[project.scripts]
+vla-subtask-phase-probe = "vla_subtask_phase_probe.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.14,<0.12.0"]
+build-backend = "uv_build"

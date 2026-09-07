@@ -1,0 +1,11 @@
+{
+  "task_id": "d4c55c46-db1b-5cb4-a35b-0c06bbd59be7",
+  "phases": ["picking", "placing", "complete"],
+  "subtask_ids": [
+    "58028ae0-dac6-5cad-ad4e-c9b98a49b46e",
+    "9c159a93-634f-5460-930b-48e9e50b9af1",
+    "d4c55c46-db1b-5cb4-a35b-0c06bbd59be7"
+  ],
+  "confidence_threshold": 0.5,
+  "stable_frames": 5
+}
