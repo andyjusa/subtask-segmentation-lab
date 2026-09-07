@@ -10,7 +10,7 @@ SAM3나 tracker의 점이 정답 라벨을 만들어 준 것은 아닙니다.
 | 실험 | 라벨의 의미 | 라벨 생성 근거 | 보존 위치 |
 |---|---|---|---|
 | 경사면 시연 50개 | 지금 수행하는 단계: 추 1~4 추가, 마지막 pointing | 오른쪽 gripper release 후보 4개를 자동 선택한 약한 라벨 | [생성 코드](../packages/groot/scripts/prepare_incline_50_split.py), [경계 CSV](../fixtures/incline50/boundaries.csv), [split](../fixtures/incline50/split.json) |
-| 실제 경사면 rollout 1개 | 카트에 성공적으로 올린 추의 누적 개수 0~4 | 영상으로 성공을 확인하고 gripper opening frame을 기록 | [판정 근거 JSON](../fixtures/rollout/boundaries.json) |
+| 실제 경사면 rollout 1개 | 카트에 성공적으로 올린 추의 누적 개수 0~4를 의도 | 당시 opening으로 기록했으나 이후 참조 지연 오류 발견; 해석 보류 | [보존 JSON](../fixtures/rollout/boundaries.json), [재검수](CAMERA_UPDATE.md#rollout-참조-라벨-정정) |
 | GR00T LIBERO 3종 | 첫 조건 전 / 첫 조건 후 / 전체 성공 | 시뮬레이터 내부 predicate·success | [predicate 코드](../packages/groot/src/groot_subtask_phase_probe/predicates.py), [task 조건](../packages/groot/src/groot_subtask_phase_probe/tasks.py) |
 | π0.5 pick-and-place | picking / placing / complete | 저장된 기준 경계 170·354프레임 | [실험 기록](EXPERIMENTS.md), [학습 진입점](../scripts/reproduce.py) |
 
@@ -87,6 +87,12 @@ CPU 학습은 train 40개 중 32개로 학습하고 8개로 모델을 선택합�
   gripper 채널을 제외해도 다른 관절과 상관이 남으므로 이 문제가 완전히 사라지지는 않습니다.
 
 ## 2. 실제 rollout: 성공 장면을 확인한 별도 라벨
+
+**2026-09-07 재검수 정정:** 아래는 당시 기록을 보존한 설명입니다. 손목 영상·action을 대조하니
+기존 4개 경계가 release보다 늦었으며, 아래 ‘첫 opening frame’ 설명은 실제 영상과 맞지 않았습니다.
+원본 fixture와 과거 결과는 유지하지만 성공 시점 평가로의 해석은 보류합니다.
+검수용 후보 46.000/56.167/86.900/100.133초도 확정 정답이 아닙니다.
+[영상 근거·후보 계산·남은 검수](CAMERA_UPDATE.md#rollout-참조-라벨-정정)를 우선해서 읽으세요.
 
 대상은 `leapshared/rollout_Incline_20260903_20260903_190043`, episode 000입니다.
 실패·재시도가 있어 release 횟수를 성공 횟수로 쓰지 않았습니다.

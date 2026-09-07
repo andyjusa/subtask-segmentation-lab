@@ -1,0 +1,17 @@
+{
+  "dataset": "leapshared/rollout_Incline_20260903_20260903_190043",
+  "episode_index": 0,
+  "fps": 30.0,
+  "frame_count": 3291,
+  "duration_seconds": 109.7,
+  "status": "provisional; human review required; original labels preserved",
+  "stage_definition": "Cumulative successful placement events; visual confirmation plus gripper-release transition proxy, not a stability-duration detector",
+  "successful_boundaries": [
+    {"stage": 1, "frame": 1380, "time_seconds": 46.0, "evidence": "weight held over cart at45.5s; released and visibly in cart46.5-49s; gripper action decreases around46s", "visual_interval_seconds": [45.5,46.5]},
+    {"stage": 2, "frame": 1685, "time_seconds": 56.166667, "evidence": "second weight above cart55-56s; released and two visible57-59s; negative gripper transition within successful attempt", "visual_interval_seconds": [56.0,57.0]},
+    {"stage": 3, "frame": 2607, "time_seconds": 86.9, "evidence": "third weight held85-87s; released and three visible88-90s; human hand approaches88s, causal role requires review", "visual_interval_seconds": [86.0,88.0]},
+    {"stage": 4, "frame": 3004, "time_seconds": 100.133333, "evidence": "fourth weight held98-100s; release100-101s; four visible101.5-102s", "visual_interval_seconds": [100.0,101.5]}
+  ],
+  "method": "Manual windows [44,48],[55,59],[86,90],[99,102] seconds; within each choose maximum median(action[i-12:i-2,15])-median(action[i+2:i+12,15]); label frame is transition proxy, not exact stable placement frame. Selected from video and action before candidate-label model evaluation.",
+  "limitations": "Offline future samples used for annotation. Not an independent annotation source for action-based probes. Human assistance and stability criteria require review. Do not promote as final ground truth."
+}

@@ -3,6 +3,10 @@
 **저장 hidden의 5단계 추론은 실행 가능하지만, 그 분류기를 이용한 경사면 실시간 pause는 아직 연결되지 않았습니다.**
 기존 LIBERO pause 구현을 보존한 것과 현재 MLP를 배포한 것은 다릅니다.
 
+**기존 계산 재사용은 적용 목표이지 현재 실시간 검증 결과가 아닙니다.** 이번 특징은 별도 오프라인
+backbone 실행에서 LoRA adapter를 끄고 action head 없이 추출했습니다. 동작 중인 policy에서
+그 hidden을 그대로 읽었을 때의 정확도·추가 지연·메모리·action 동등성은 따로 검증해야 합니다.
+
 | 항목 | 경사면 vision MLP | 기존 LIBERO boundary probe |
 |---|---|---|
 | 입력 | vision 평균 z, 2048차원 | 표현 z와 변화량 z−이전 z의 concat |

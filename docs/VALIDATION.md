@@ -1,5 +1,8 @@
 # 이번 패키지 검증 (2026-09-07)
 
+**아래 표는 보존 fixture의 CPU 재현 기록입니다.** 이후 수행한 카메라별 CUDA 재추출·12조건 비교와
+rollout 라벨 오류 검수는 [최신 기록](CAMERA_UPDATE.md)에 분리했습니다. 아래 rollout 점수는 보존 라벨 기준입니다.
+
 Mac arm64, 신규 `.venv`,Python3.12.13,NumPy1.26.4,scikit-learn1.9.0,
 PyTorch2.14.0,CPU. 정확한 의존성은 uv.lock에 고정했습니다.
 
