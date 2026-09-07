@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Subtask: train smoke (CPU)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/reproduce.py",
+      "cwd": "${workspaceFolder}",
+      "args": ["incline50", "--epochs", "2", "--output", "${input:trainOutput}"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Subtask: infer saved features (CPU)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/infer.py",
+      "cwd": "${workspaceFolder}",
+      "args": ["--model-dir", "${input:modelDir}", "--features", "${input:featurePath}", "--output", "${input:inferOutput}", "--traceback"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ],
+  "inputs": [
+    {"id": "trainOutput", "type": "promptString", "description": "New training output directory", "default": "outputs/debug-train"},
+    {"id": "modelDir", "type": "promptString", "description": "Directory containing mlp.pt, scaler.npz, results.json", "default": "outputs/incline50"},
+    {"id": "featurePath", "type": "promptString", "description": "Feature NPZ", "default": "fixtures/incline50/validation/episode_000/groot_backbone_hidden.npz"},
+    {"id": "inferOutput", "type": "promptString", "description": "New prediction JSONL path", "default": "outputs/debug-predictions.jsonl"}
+  ]
+}

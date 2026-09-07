@@ -28,3 +28,17 @@ PyTorch2.14.0,CPU. 정확한 의존성은 uv.lock에 고정했습니다.
 GR00T pytest가 처음에는 pyarrow/gymnasium 누락으로 수집 실패하여 dev 의존성에 추가한 후70개 통과했습니다.
 이 테스트가 CUDA 특징 추출,실제 로봇 제어,모든 외부 tracker 설치까지 검증했다는 뜻은 아닙니다.
 새 runner/tests는 Ruff 검사 대상이며 보존한 과거 코드 전체를 일괄 재포맷하지 않았습니다.
+
+## 전달용 추론·디버깅 경로 추가 검증
+
+- root 19개 + 기존 π0.5 10개 + GR00T 70개: 총 99개 통과.
+- 새 테스트가 실제 2 epoch 학습 → Linear/MLP 저장 → 재로드 → 추론을 실행한다.
+- 입력 shape·NaN·frame 정렬·scaler·출력 덮어쓰기 방지를 검사한다.
+- `doctor.py`: Python 3.12.13, fixture 55개 정상. 비밀 환경값은 출력하지 않는다.
+- `infer.py`: 기존 기본 MLP로 episode 000의 `[290,2048]` 특징 추론 완료, clip 비율 0.
+- 동일 명령을 표준 pdb로 실행 완료. VS Code UI는 별도 검증하지 않았다.
+- `visualize.py`: raw 단계·참조 라벨·확률 HTML 생성 및 데이터 계약 테스트 통과.
+  자동 브라우저의 로컬 파일 접근 제한으로 HTML의 브라우저 화면 확인은 하지 못했다.
+- 새 코드 Ruff format/check 및 `git diff --check` 통과.
+
+새 테스트는 기능 확인이며 본 실험의 80 epoch 학습 점수를 다시 갱신한 것이 아니다.

@@ -13,12 +13,26 @@ Python 3.12와 uv가 필요합니다. 모델 다운로드·HF 로그인·GPU 없
 git clone git@github.com:andyjusa/subtask-segmentation-lab.git
 cd subtask-segmentation-lab
 uv sync --frozen --extra train
+uv run --frozen --extra train python scripts/doctor.py
 uv run --frozen python scripts/reproduce.py verify
 uv run --frozen --extra train python scripts/reproduce.py pi05
 uv run --frozen --extra train python scripts/reproduce.py incline50
 uv run --frozen python scripts/reproduce.py rollout
 uv run --frozen pytest
 ```
+
+학습한 GR00T 분류기로 저장된 특징을 추론합니다. 샘플마다 단계·확률을 JSONL로 남기며,
+입력 규격과 모델 호환성을 검사합니다. 실시간 GR00T 서버나 로봇을 실행하는 명령은 아닙니다.
+
+```bash
+uv run --frozen --extra train python scripts/infer.py \
+  --model-dir outputs/incline50 \
+  --features fixtures/incline50/validation/episode_000/groot_backbone_hidden.npz \
+  --output outputs/episode_000.jsonl
+```
+
+[디버깅 안내](docs/DEBUGGING.md): 환경 진단, 2 epoch 학습→로드→추론 테스트, pdb와 VS Code breakpoint 설정.
+[그래프·실험 영상](docs/VIDEOS.md): raw 단계·확률 HTML 생성 및 Notion의 tracker/SAM3 대표 영상.
 
 결과는 `outputs/<실험>/results.json`에 저장됩니다. 재실행할 때는 `--output outputs/run2`처럼 새 경로를 사용합니다.
 incline50은 Linear와 MLP를 둘 다 학습합니다. `--epochs 2`는 실행 확인용이며 본 실험 점수와 비교하지 않습니다.
