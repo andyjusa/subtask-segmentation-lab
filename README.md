@@ -40,6 +40,8 @@ incline50은 Linear와 MLP를 둘 다 학습합니다. `--epochs 2`는 실행 �
 
 ## 읽는 순서
 
+라벨이 어떻게 만들어졌는지는 [라벨링 기준·예외·재생성 방법](docs/LABELING.md)을 먼저 참고하세요.
+
 1. [실험표·결론](docs/EXPERIMENTS.md): 데이터, 라벨, 분할과 성능을 같은 표에서 확인
 2. [구조·표현·평가 지표](docs/METHODS.md): 무엇을 추출하고 어떻게 경계를 찾는가
 3. [실행 방법·재현 범위](docs/REPRODUCTION.md): CPU 재평가, GPU 원본 특징 추출, 외부 입력

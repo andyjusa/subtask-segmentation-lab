@@ -50,6 +50,11 @@ GR00T LIBERO linear 비교는 train-only scaler,balanced logistic regression,L2,
 native dimension 및 train-only common256을 동일 seed/split로 비교했습니다.
 단일 rollout 사례는 C=1 고정5fold이며 위 LIBERO protocol과 다릅니다.
 
+## 라벨의 출처
+
+시연의 gripper release, 실제 rollout의 성공 적재, LIBERO 환경 predicate는 서로 다른 정답 정의입니다.
+[기존 라벨링 방법](LABELING.md)에 자동 기준·pointing 구간의 의미·수동 판단 한계·재생성 명령을 정리했습니다.
+
 ## Stage F1과 Boundary F1
 
 Stage macro F1은 매 시점의 **어느 단계인가**를 클래스별 동등 가중해 평가합니다.
