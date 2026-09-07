@@ -42,3 +42,13 @@ GR00T pytest가 처음에는 pyarrow/gymnasium 누락으로 수집 실패하여 
 - 새 코드 Ruff format/check 및 `git diff --check` 통과.
 
 새 테스트는 기능 확인이며 본 실험의 80 epoch 학습 점수를 다시 갱신한 것이 아니다.
+
+## 처음 보는 사용자 경로 보완 검증
+
+- 수정 전 외부 입력 CLI가 없는 오류와 hidden-only가 tracker 파일을 요구하는 오류를 테스트2개로 재현했습니다.
+- 수정 후 `uv run --frozen --extra train pytest -q -ra`: **110 passed, 0 skipped**.
+  기본 수집 범위는 root30개 + π0.5 10개 + GR00T 70개입니다.
+- 실제 fixture3개를 별도 폴더에 복사하고 custom split으로2 epoch 학습→저장→재로드→290샘플 추론을 확인했습니다.
+- hidden-only 및 robot+hidden 경로는 tracker 없이 로드되며 robot-first concat 순서를 유지합니다.
+- split 겹침·중복·누락/역순 라벨·NaN·FPS·frame 간격·짧은 입력·stage 누락을 거부하는 테스트9개를 추가했습니다.
+- 원본 fixture·과거 점수는 바꾸지 않았습니다. 새 라벨 수동 검수, CUDA 재추출, 실시간 로봇 제어는 실행하지 않았습니다.

@@ -18,7 +18,7 @@ uv run --frozen python scripts/reproduce.py verify
 uv run --frozen --extra train python scripts/reproduce.py pi05
 uv run --frozen --extra train python scripts/reproduce.py incline50
 uv run --frozen python scripts/reproduce.py rollout
-uv run --frozen pytest
+uv run --frozen --extra train pytest -q -ra
 ```
 
 학습한 GR00T 분류기로 저장된 특징을 추론합니다. 샘플마다 단계·확률을 JSONL로 남기며,
@@ -33,6 +33,11 @@ uv run --frozen --extra train python scripts/infer.py \
 
 [디버깅 안내](docs/DEBUGGING.md): 환경 진단, 2 epoch 학습→로드→추론 테스트, pdb와 VS Code breakpoint 설정.
 [그래프·실험 영상](docs/VIDEOS.md): raw 단계·확률 HTML 생성 및 Notion의 tracker/SAM3 대표 영상.
+[새 데이터로 학습→추론](docs/NEW_DATA.md): 외부 hidden·라벨·split을 받는 실행 경로.
+[GR00T 온라인 연결 범위](docs/ONLINE_INTEGRATION.md): 현재 되는 것과 추가 구현할 것.
+
+기본 pytest는 root·π0.5·GR00T 테스트를 모두 수집합니다. `--extra train`을 포함하고
+skip 없이 완료됐는지 확인하세요. CPU 테스트 통과가 CUDA나 로봇 동작 검증은 아닙니다.
 
 결과는 `outputs/<실험>/results.json`에 저장됩니다. 재실행할 때는 `--output outputs/run2`처럼 새 경로를 사용합니다.
 incline50은 Linear와 MLP를 둘 다 학습합니다. `--epochs 2`는 실행 확인용이며 본 실험 점수와 비교하지 않습니다.

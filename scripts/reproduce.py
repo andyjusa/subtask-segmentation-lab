@@ -54,27 +54,25 @@ def rollout(output: Path) -> dict:
 def incline(output: Path, args: argparse.Namespace) -> dict:
     import torch
     import train_tapnextpp_subtask_probe as baseline
+    from incline_inputs import load_inputs
     from sklearn.preprocessing import StandardScaler
 
     torch.set_num_threads(args.threads)
     fixture = ROOT / "fixtures/incline50"
-    split = json.loads((fixture / "split.json").read_text())
-    boundaries = baseline.load_boundaries(fixture / "boundaries.csv")
-    episodes = {}
-    for partition in ("train", "validation"):
-        for episode in split[partition]:
-            path = fixture / partition / f"episode_{episode:03d}" / "groot_backbone_hidden.npz"
-            with np.load(path) as data:
-                frames = data["sample_frames"].astype(np.int64)
-                episodes[episode] = baseline.EpisodeData(
-                    episode,
-                    data[args.hidden_key].astype(np.float32),
-                    baseline.stage_labels(frames, boundaries[episode]),
-                    frames,
-                    boundaries[episode],
-                )
+    split, episodes, inputs = load_inputs(
+        args.features_dir or fixture,
+        args.boundaries or fixture / "boundaries.csv",
+        args.split or fixture / "split.json",
+        args.hidden_key,
+        args.source_fps,
+        args.sample_fps,
+    )
+    if not 0 < args.selection_episodes < len(split["train"]):
+        raise ValueError("selection-episodes must leave at least one training episode")
+    inputs["label_version"] = args.label_version or "sha256:" + inputs["boundaries_sha256"]
     shuffled = np.random.default_rng(args.seed).permutation(split["train"])
-    selection_ids, train_ids = sorted(shuffled[:8].tolist()), sorted(shuffled[8:].tolist())
+    selection_ids = sorted(shuffled[: args.selection_episodes].tolist())
+    train_ids = sorted(shuffled[args.selection_episodes :].tolist())
     train_x, train_y = baseline.concatenate(episodes, train_ids)
     selection_x, selection_y = baseline.concatenate(episodes, selection_ids)
     scaler = StandardScaler().fit(train_x)
@@ -102,9 +100,10 @@ def incline(output: Path, args: argparse.Namespace) -> dict:
             scaler,
             device,
             256,
-            5.0,
+            args.sample_fps,
             output,
             name,
+            source_fps=args.source_fps,
         )
         results[name]["best_epoch"] = epoch
         (output / f"{name}_history.json").write_text(json.dumps(history, indent=2))
@@ -117,6 +116,7 @@ def incline(output: Path, args: argparse.Namespace) -> dict:
         "validation": split["validation"],
         "hidden_key": args.hidden_key,
         "seed": args.seed,
+        "inputs": inputs,
         "variants": results,
     }
 
@@ -155,10 +155,24 @@ def main() -> None:
     parser.add_argument("--epochs", type=int, default=80)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--threads", type=int, default=4)
+    parser.add_argument("--features-dir", type=Path, help="external train/validation hidden root")
+    parser.add_argument("--boundaries", type=Path, help="external boundary seconds CSV")
+    parser.add_argument("--split", type=Path, help="external episode split JSON")
+    parser.add_argument("--selection-episodes", type=int, default=8)
+    parser.add_argument("--source-fps", type=float, default=30.0)
+    parser.add_argument("--sample-fps", type=float, default=5.0)
+    parser.add_argument("--label-version", help="human-readable identifier; checksum always saved")
     parser.add_argument(
         "--hidden-key", choices=("vision_mean", "hidden_mean"), default="vision_mean"
     )
     args = parser.parse_args()
+    external = (args.features_dir, args.boundaries, args.split)
+    if any(v is not None for v in external) and (
+        args.experiment != "incline50" or not all(v is not None for v in external)
+    ):
+        parser.error(
+            "incline50 external inputs require features-dir, boundaries and split together"
+        )
     if args.epochs < 1 or args.threads < 1:
         parser.error("epochs and threads must be positive")
     if args.experiment == "verify":

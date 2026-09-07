@@ -157,6 +157,27 @@ def load_episodes(
     split_by_episode.update({int(episode): "validation" for episode in split["validation"]})
     episodes = {}
     for episode, split_name in sorted(split_by_episode.items()):
+        if exclude_tracker and hidden_dir is not None:
+            hidden_path = hidden_dir / split_name / f"episode_{episode:03d}" / hidden_filename
+            with np.load(hidden_path, allow_pickle=False) as data:
+                sample_frames = np.asarray(data["sample_frames"], dtype=np.int64)
+                features = np.asarray(data[hidden_key], dtype=np.float32)
+            if sample_frames.ndim != 1 or features.ndim != 2 or len(features) != len(sample_frames):
+                raise ValueError(f"Episode {episode} hidden shape mismatch")
+            if not len(sample_frames) or sample_frames[0] < 0 or np.any(np.diff(sample_frames) != stride):
+                raise ValueError(f"Episode {episode} invalid hidden sample spacing")
+            if not np.isfinite(features).all():
+                raise ValueError(f"Episode {episode} hidden contains nonfinite values")
+            if robot_features:
+                robot = robot_features[episode]
+                if sample_frames[-1] >= len(robot):
+                    raise ValueError(f"Episode {episode} robot frame mismatch")
+                features = np.concatenate([robot[sample_frames], features], axis=1)
+            episodes[episode] = EpisodeData(
+                episode, features, stage_labels(sample_frames, boundaries[episode]),
+                sample_frames, boundaries[episode],
+            )
+            continue
         path = tracks_dir / split_name / f"episode_{episode:03d}" / tracks_filename
         with np.load(path) as arrays:
             sample_frames = np.arange(0, len(arrays["tracks"]), stride, dtype=np.int32)
@@ -363,6 +384,7 @@ def evaluate_model(
     sample_fps: float,
     output_dir: Path,
     name: str,
+    source_fps: float = 30.0,
 ) -> dict:
     all_labels = []
     all_raw = []
@@ -380,7 +402,7 @@ def evaluate_model(
         predicted_frames = episode.sample_frames[
             np.minimum(boundary_samples, len(episode.sample_frames) - 1)
         ]
-        errors_s = np.abs(predicted_frames - episode.reference_boundaries) / 30.0
+        errors_s = np.abs(predicted_frames - episode.reference_boundaries) / source_fps
         ordered_f1 = float(f1_score(episode.labels, ordered, average="macro"))
         episode_results.append(
             {
@@ -389,8 +411,8 @@ def evaluate_model(
                 "ordered_macro_f1": ordered_f1,
                 "boundary_errors_s": errors_s.tolist(),
                 "boundary_mean_error_s": float(errors_s.mean()),
-                "predicted_boundaries_s": (predicted_frames / 30.0).tolist(),
-                "reference_boundaries_s": (episode.reference_boundaries / 30.0).tolist(),
+                "predicted_boundaries_s": (predicted_frames / source_fps).tolist(),
+                "reference_boundaries_s": (episode.reference_boundaries / source_fps).tolist(),
             }
         )
         np.savez_compressed(

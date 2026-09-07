@@ -16,7 +16,7 @@
 ```bash
 uv sync --frozen --extra train
 uv run --frozen --extra train python scripts/doctor.py
-uv run --frozen --extra train pytest -q
+uv run --frozen --extra train pytest -q -ra
 uv run --frozen --extra train python scripts/reproduce.py incline50
 uv run --frozen --extra train python scripts/infer.py \
   --model-dir outputs/incline50 \

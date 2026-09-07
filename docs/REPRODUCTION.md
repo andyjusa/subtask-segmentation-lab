@@ -30,6 +30,10 @@ uv run vla-subtask-phase-probe replay \
 
 ## GPU: 원본 GR00T hidden 다시 추출
 
+새 라벨·split·hidden으로 학습하려면 [새 데이터 실행 경로](NEW_DATA.md)를 함께 사용합니다.
+아래 추출 예시는 기존 fixture split을 재사용합니다. 새로 나눈 데이터라면 `--split`을
+새 라벨러가 만든 `outputs/labels-new/split.json`으로 바꾸고, 학습에도 동일 파일을 넣으세요.
+
 아래는 **기존 Isaac-GR00T CUDA 환경이 준비된 사용자용**입니다. 이번 Mac CPU 재현 범위와 별개입니다.
 외부 원본 dataset,카메라3개 및16D dual-arm embodiment와 일치하는 checkpoint가 필요합니다.
 LIBERO 공식 checkpoint를 그대로 NEW_EMBODIMENT 입력에 넣을 수 있다는 뜻이 아닙니다.
@@ -67,6 +71,8 @@ uv run --project "$ISAAC_GROOT_ROOT" --no-sync python \
 
 원본 패키지 README는 역사적 경로/환경을 포함합니다. **새 진입점은 루트 README와 이 문서**입니다.
 모든 과거 GPU 실험이 clone 직후 실행된다고 주장하지 않습니다.
+특히 경사면 MLP를 기존 LIBERO pause probe 대신 넣을 수는 없습니다.
+[온라인 연결 계약과 남은 작업](ONLINE_INTEGRATION.md)을 확인하세요.
 
 ## 출처·권리·비공개
 

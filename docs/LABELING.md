@@ -68,8 +68,9 @@ CSV의 초 단위 경계를 원본 FPS로 frame에 대응시키고,
 예를 들어 원본 30 FPS에서 15.8초는 frame 474입니다.
 frame 473은 stage 0, frame 474는 stage 1입니다.
 hidden은 5 FPS로 추출해도 `sample_frames`는 원본 frame 인덱스입니다.
-경계 시간을 5 FPS로 변환하면 정렬이 어긋납니다. 현재 학습 라벨 loader에는 30 FPS가 하드코딩돼 있으므로
-다른 원본 FPS 데이터는 loader를 수정·검증해야 합니다. FPS를 바꾸는 CLI 옵션은 이 함수에 없습니다.
+경계 시간을 5 FPS로 변환하면 정렬이 어긋납니다. legacy tracker 학습 loader는 여전히 원본 30 FPS를 가정합니다.
+새 루트 학습 경로는 `--source-fps`와 `--sample-fps`를 받아 frame 간격을 검증합니다.
+[새 데이터 실행](NEW_DATA.md)과 [보존 라벨 버전 차이](LABEL_VERSIONS.md)를 확인하세요.
 
 ### 학습·검증 분리
 

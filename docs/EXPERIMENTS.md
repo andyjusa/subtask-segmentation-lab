@@ -99,6 +99,23 @@ C2 R3b causal Transformer: boundary F1±5 .681±.065, 실패 FPR0, probe2.612ms.
 MLP .671±.375, FPR .15. 차이 CI가 넓어 Transformer 우위 확정 안 됨.
 고정색/랜덤색 및 두 경계 실험: `archive/groot/*COLOR*`, `*BOUNDARY*`.
 
+## 7. SciEdu 73초 — Cosmos 시간창/FPS
+
+경사면50개와 별도인 1 episode입니다. 카트 경사로 이동 → 추 추가 → 추 제거 → 책상 복귀,
+참조 경계22/47.5/63.25초, 종료73초입니다.
+Cosmos-Reason2-2B backbone의 vision mean에 PCA+Linear probe를 적용했습니다.
+LoRA·action head는 끄고 외부 카메라만 시간에 따라 바꾸며 손목 카메라는 첫 프레임으로 고정했습니다.
+
+| 입력 | Stage macro F1 | Balanced accuracy | backbone 평균 지연 | peak VRAM |
+|---|---:|---:|---:|---:|
+| 6초·1 FPS | .946 | .955 | 447ms | 약6.8GB |
+| 6초·5 FPS | .970 | .975 | 2,287ms | 약9.6GB |
+
+동일 episode 안 시간 블록 검증이며 경계 ±0.5초의 애매한 표본은 주 분류 평가에서 제외했습니다.
+6초·1 FPS의 예측 경계27/50/66초는 모두 늦었습니다. 높은 Stage F1이 정확한 전환이나
+새 episode 일반화·자유형 QA를 보장하지 않습니다. 비용 대비6초·1 FPS는 **이 영상 안의 후보**입니다.
+전체8조건과 오답: [보존 보고서](../archive/groot/sciedu_cosmos/REPORT.md).
+
 ## 다음 검증
 
 - 라벨을 사람2명이 독립 검수하고 성공 개수/다음 동작/pointing 정의를 먼저 고정

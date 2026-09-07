@@ -9,7 +9,6 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-pytest.importorskip("torch")
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("infer", ROOT / "scripts/infer.py")
 infer = importlib.util.module_from_spec(spec)
